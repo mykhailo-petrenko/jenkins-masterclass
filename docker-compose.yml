@@ -1,0 +1,8 @@
+services:
+  jenkins:
+    build: ./jenkins/
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - /Users/mihal/projects/_training/jenkins/jenkins_home:/var/jenkins_home
