@@ -1,6 +1,8 @@
 # Jenkins Masterclass
 
-UDEMY https://www.udemy.com/course/jenkins-masterclass/l
+UDEMY https://www.udemy.com/course/jenkins-masterclass/
+
+All code and configuration created only in educational purposes.
 
 ## Links 
 - Pipeline Syntax https://www.jenkins.io/doc/book/pipeline/syntax/
