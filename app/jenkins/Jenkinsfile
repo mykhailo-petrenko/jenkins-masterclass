@@ -22,7 +22,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './app/jenkins/scripts/deliver.sh'
+                dir ("app") {
+                    sh './jenkins/scripts/deliver.sh'
+                }
             }
         }
     }
