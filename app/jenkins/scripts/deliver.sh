@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 echo 'The following Maven command installs your Maven-built Java application'
 echo 'into the local Maven repository, which will ultimately be stored in'
@@ -11,21 +11,17 @@ set +x
 echo 'The following command extracts the value of the <name/> element'
 echo 'within <project/> of your Java/Maven project''s "pom.xml" file.'
 set -x
-NAME=`mvn -q -DforceStdout help:evaluate -Dexpression=project.name`
+NAME=`mvn -q -DforceStdout help:evaluate -Dexpression=project.name |  sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"`
 set +x
 
 echo 'The following command behaves similarly to the previous one but'
 echo 'extracts the value of the <version/> element within <project/> instead.'
 set -x
-VERSION=`mvn -q -DforceStdout help:evaluate -Dexpression=project.version`
+VERSION=`mvn -q -DforceStdout help:evaluate -Dexpression=project.version |  sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"`
 set +x
 
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
-
-pwd
-ls -l
-ls -l ./target
 
 
 set -x
