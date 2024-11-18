@@ -16,3 +16,14 @@ docker compose up
 ```
 
 Open http://localhost:8080/
+
+## Tricks (Jenkinsfile peline)
+
+### Run the command and store output in a variable
+
+```
+    def currentBranch = sh(
+        script: 'git rev-parse --abbrev-ref HEAD', 
+        returnStdout: true
+    ).trim()
+```
